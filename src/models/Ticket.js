@@ -7,9 +7,41 @@ const ticketSchema = new mongoose.Schema({
     unique: true
   },
   journeyDate: {
-    type: Date,
-    required: true
+    type: Date // Kept for backwards compatibility if needed, but not strictly required initially
   },
+  dateOfJourney: {
+    type: String
+  },
+  trainNumber: {
+    type: String
+  },
+  trainName: {
+    type: String
+  },
+  sourceStation: {
+    type: String
+  },
+  destinationStation: {
+    type: String
+  },
+  chartStatus: {
+    type: String
+  },
+  numberOfpassenger: {
+    type: Number
+  },
+  ticketFare: {
+    type: Number
+  },
+  distance: {
+    type: Number
+  },
+  passengerList: [{
+    passengerSerialNumber: Number,
+    bookingStatusDetails: String,
+    currentStatus: String,
+    currentStatusDetails: String
+  }],
 
   currentStatus: {
     type: String,

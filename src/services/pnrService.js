@@ -17,14 +17,17 @@ const getPNRStatus = async (pnr) => {
     console.log("API RAW RESPONSE:", data);
 
     return {
+      success: true,
       pnr,
-      currentStatus: data?.data?.currentStatus || "UNKNOWN"
+      currentStatus: data?.data?.currentStatus || "UNKNOWN",
+      data: data?.data
     };
 
   } catch (error) {
     console.error("PNR API Error:", error.response?.data || error.message);
 
     return {
+      success: false,
       pnr,
       currentStatus: "UNKNOWN"
     };
