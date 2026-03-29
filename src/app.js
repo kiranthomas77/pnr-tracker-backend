@@ -8,8 +8,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173", 
-    "https://pnr-tracker-frontend.vercel.app/"
-  ]
+    "https://pnr-tracker-frontend.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  credentials: true
 }));
 
 app.use(express.json());
