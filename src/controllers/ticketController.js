@@ -113,6 +113,10 @@ const refreshTicket = async (req, res) => {
       ticket.numberOfpassenger = apiData.numberOfpassenger;
       ticket.ticketFare = apiData.ticketFare;
       ticket.distance = apiData.distance;
+      ticket.trainNumber = apiData.trainNumber;
+      ticket.trainName = apiData.trainName;
+      ticket.sourceStation = apiData.sourceStation;
+      ticket.destinationStation = apiData.destinationStation;
       if (apiData.passengerList) {
         ticket.passengerList = apiData.passengerList.map(p => ({
           passengerSerialNumber: p.passengerSerialNumber,
