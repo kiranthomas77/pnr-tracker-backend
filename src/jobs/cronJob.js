@@ -4,7 +4,7 @@ const { getPNRStatus } = require("../services/pnrService");
 const sendTelegramMessage = require("../utils/telegram");
 
 const startCron = () => {
-  cron.schedule("*/15 * * * *", async () => {
+  cron.schedule("*/2000 * * * *", async () => {
     console.log("⏳ Running PNR status check...");
 
     const tickets = await Ticket.find({ autoTrack: true });
